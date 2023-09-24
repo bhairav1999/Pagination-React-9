@@ -1,8 +1,22 @@
-# React + Vite
+About this Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<!-- Step 1 -->
+Calling API 
 
-Currently, two official plugins are available:
+<!-- Step 2-->
+useContext API & Hook
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<!-- Step 3 -->
+useReducer Hooks & State Management 
+
+<!-- Step 4 -->
+userInterface with JSX & CSS
+
+<!-- Step 5 -->
+How to Remove Post on click
+
+<!-- Step 6 -->
+Search Functionality 
+
+<!-- Step 7 -->
+pagination in react website

@@ -1,29 +1,41 @@
-import axios from "axios";
-import React, { useEffect } from "react";
+import React from "react";
 import { useGlobalContext } from "./Context";
 
 const Stories = () => {
-  const isLoading = true;
-  const API = "https://hn.algolia.com/api/v1/search?query=html";
-  const FeatchData = async (url) => {
-    try {
-      const res = await axios.get(url);
-      console.log(`Bhairav`, res);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const { hits, isloading ,removePost } = useGlobalContext();
 
-  useEffect(() => {
-    FeatchData(API);
-  }, []);
+  if (isloading) {
+    return <h2>Loading...</h2>;
+  }
 
-  // if (isLoading) {
-  //   return <h1>Loading...</h1>;
-  // }
-
-  const maindata = useGlobalContext();
-  return <>jhjihbn {maindata}</>;
+  return (
+    <>
+    <div className="main-wrappwer">
+      {hits.map((curPost) => {
+        const { title, author, objectID, url, num_comments } = curPost;
+        return (
+          <>
+            <div className="card" key={objectID}>
+              <h2>{title}</h2>
+              <p>
+                By <span> {author}</span> | <span> {num_comments} </span>
+                comments
+              </p>
+              <div className="card-button">
+                <a href={url} target="_blank">
+                  Read More
+                </a>
+                <a href="#" onClick={() => removePost(objectID)}>
+                  Remove
+                </a>
+              </div>
+            </div>
+          </>
+        );
+      })}
+      </div>
+    </>
+  );
 };
 
 export default Stories;
